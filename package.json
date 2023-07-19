@@ -3,11 +3,14 @@
   "description": "Initial Commit test",
   "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsError [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only URLs with a scheme in: file and data are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'c:'",
   "scripts": {
     "dev": "npx nodemon src/index.js",
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "npx eslint ./src --ext .js --fix --ignore-path ./.gitignore",
+    "lint:format": "npx prettier --loglevel warn --write \"./**/*.{js, ts}\"",
+    "lint": "npm run lint:fix && npm run lint:format"
   },
   "author": "",
   "license": "ISC",
